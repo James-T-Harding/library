@@ -10,9 +10,6 @@ class Book:
         self.pages = pages
         self.isbn = isbn
 
-    def __copy__(self):
-        return Book(self.author, self.title, self.pages, self.isbn)
-
     @property
     def json(self):
         return dict(
