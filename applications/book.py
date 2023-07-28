@@ -1,3 +1,4 @@
+from copy import copy
 from typing import List
 
 
@@ -9,6 +10,9 @@ class Book:
         self.pages = pages
         self.isbn = isbn
 
+    def __copy__(self):
+        return Book(self.author, self.title, self.pages, self.isbn)
+
     @property
     def json(self):
         return dict(
@@ -18,14 +22,6 @@ class Book:
             pages=self.pages,
             isbn=self.isbn
         )
-
-    @classmethod
-    def from_csv(cls, line):
-        return cls(*line.split(','))
-
-    @property
-    def csv(self):
-        return f"{self.author},{self.title}"
 
 
 class BookList:

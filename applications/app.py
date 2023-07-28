@@ -1,5 +1,5 @@
 from flask import Flask, request
-from book import Book, BookList
+from applications.book import Book, BookList
 
 app = Flask(__name__)
 
