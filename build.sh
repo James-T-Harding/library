@@ -3,5 +3,5 @@ python3 -m venv venv
 chmod +x venv/bin/activate
 ./venv/bin/activate
 pip install -r requirements.txt
-python3 -m pytest --cov=applications
+python3 -m pytest --cov=applications --cov-report=html
 python3 -m pydoc -w applications applications.book applications.app
